@@ -15,22 +15,22 @@
     <?php
         $dssanpham = [];
         $dssanpham [] =[
-            "name"=>"Quan Sip",
-            "price"=>180.000,
-            "describe"=>"Chất liệu : Vải cottong 100%",
-            "supplier_name"=>"no",
+            "name" => "Jordan 1 Low Blue",
+            "price" => 6000000,
+            "describe" => "Bên Ngoài: Da 100%, Đế: Cao Su 100%",
+            "supplier_name"=> "Tinker Linn Hatfield"
         ];
     $dssanpham [] =[
-        "name"=>"Quan Sip",
-        "price"=>180.000,
-        "describe"=>"Chất liệu : Vải cottong 100%",
-        "supplier_name"=>"no",
+        "name" => "Jordan 1 Travis Scott",
+        "price" => 11190000,
+        "describe" => "Bên Ngoài: Da 100%, Đế: Cao Su 100%",
+        "supplier_name"=> "Tinker Linn Hatfield"
     ];
     $dssanpham [] =[
-        "name"=>"Quan Sip",
-        "price"=>180.000,
-        "describe"=>"Chất liệu : Vải cottong 100%",
-        "supplier_name"=>"no",
+        "name" => "Jordan 1 Chicago",
+        "price" => 7800000,
+        "describe" => "Bên Ngoài: Da 100%, Đế: Cao Su 100%",
+        "supplier_name"=> "Tinker Linn Hatfield"
     ];
     ?>
 <div class="container">
