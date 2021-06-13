@@ -1,34 +1,34 @@
+<?php include_once "session.php";?>
+<?php include_once "database.php" ;?>
+<?php
+$cookie_name = "title";
+$cookie_value = "Hệ thống quản lý sinh viên";
+setcookie($cookie_name,$cookie_value,time()+(60*60*24),"/"); // nạp giá trị vào cookie
+
+$_SESSION["user"] = [
+    "username"=>"Nguyễn Văn An",
+    "email" =>"annv@gmail.com"
+];
+?>
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Danh sách sinh viên</title>
-</head>
+<?php include "html/head.php" ;?>
 <body>
 <h1>Danh sách sinh viên</h1>
-    <?php
-        $dshocsinh = [];
-        $dshocsinh[] = [
-            "name"=>"Nguyen Van An",
-            "age"=>18
-        ]; // them 1 mang co cac key value
-        $dshocsinh[] = [
-            "name"=>"Nguyen Minh Duc",
-            "age"=>20
-        ];
-        $dshocsinh[] =  [
-            "name"=>"Dao Duy Anh",
-            "age"=>21
-        ];
-        ?>
-        <ul>
-            <?php foreach ($dshocsinh as $hs){ ?>
-            <li><?php echo $hs["name"]."--".$hs["age"]; ?></li>
-            <?php  } ?>
-        </ul>
-        <a href="index.php">Quay về trang chủ</a>
+<?php
+// lay data tu bang sinhviens
+$sql_txt = "select * from sinhvien";
+$dssinhvien = queryDB($sql_txt);
+?>
+<a href="themsinhvien.php">Thêm sinh viên</a>
+<a href="danhsachuutu.php">Danh sách SV ưu tú</a>
+<ul>
+    <?php foreach($dssinhvien as $sv){ ?>
+        <li><a href="chitietsinhvien.php?id=<?php echo $sv["id"];?>"><?php echo $sv["name"]."--".$sv["age"];?></a>
+            <a href="edit.php?id=<?php echo $sv["id"];?>">Sửa</a><a href="delete.php?id=<?php echo $sv["id"];?>">Xóa</a>
+            <a href="svuutu.php?id=<?php echo $sv["id"];?>">Thêm vào danh sách SV ưu tú</a>
+        </li>
+    <?php } ?>
+</ul>
 </body>
 </html>
